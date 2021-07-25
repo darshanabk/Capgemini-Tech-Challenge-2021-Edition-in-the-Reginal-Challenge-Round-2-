@@ -1,0 +1,11 @@
+#python 3
+# to find the combination count of sub-sequence of MOM and DAD, finally their tottal count.
+from itertools import combinations
+if __name__=="__main__":
+    totalString=input("")
+    if len(totalString) in range(1,100000):
+        mom=combinations([i for i in totalString if i !="D" and i != "A"],3)
+        dad=combinations([i for i in totalString if i !="M" and i != "O"],3)
+        mother=len([x for x in mom if x ==("M","O","M")])
+        father=len([x for x in dad if x ==("D","A","D")])
+        print(mother+father)
