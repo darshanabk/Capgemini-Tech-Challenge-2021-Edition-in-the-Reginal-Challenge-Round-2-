@@ -1,0 +1,17 @@
+from datetime import datetime
+init_time = datetime.now()
+
+from itertools import combinations
+if __name__=="__main__": 
+    totalString=input("")
+    if len(totalString) in range(1, 102000):
+        m = (i for i in totalString if i == "M" or i == "O")
+        d = (i for i in totalString if i == "D" or i == "A")
+        mom = combinations(m, 3)
+        dad = combinations(d, 3)
+        mother = sum(1 for x in mom if x == ("M", "O", "M"))
+        father = sum(1 for x in dad if x == ("D", "A", "D"))
+        print(mother + father)
+        
+fin_time = datetime.now()
+print("Execution time", (fin_time - init_time))
